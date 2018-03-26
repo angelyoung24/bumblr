@@ -1,0 +1,9 @@
+<div class='comment-form'>
+<%= form_for [@post, @post.comments.build] do |c| %>
+  <%= c.hidden_field :post_id, :value=> @post_id %>
+  <%= c.text_field :user_name %>
+  <%= c.text_field :body %>
+  <%= c.submit %>
+<% end %>
+</div>
+

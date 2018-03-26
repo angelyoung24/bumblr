@@ -1,0 +1,30 @@
+<p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+</p>
+
+<p>
+    <strong>Text:</strong>
+    <%= @post.text %>
+</p>
+
+<h2>Comments</h2>
+<% @comments.each do |c| %>
+<div>
+<strong><%= c.user_name %></strong>
+<br>
+<p><%= c.body %></p>
+<p><%= link_to 'Delete', post_comment_path(c), method: :delete, date: { confirm: 'REALLY?!?!' } %></p>
+</div>
+<% end %>
+
+
+
+<%#= render partial: 'comments/form', locals: { comment: @comment }%>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
