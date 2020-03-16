@@ -14,5 +14,3 @@
 //= require turbolinks
 //= require_tree .
 // = require materialize
-
-alert("Hey! Make sure you log in!");
